@@ -23,10 +23,12 @@ The display reading is an indexed text that varies. The display reading is "".
 
 The description of the display is "The display [if the display reading is empty]is blank[otherwise]reads '[display reading]'[end if]."
 
-Typing it on is an action applying to one value and one touchable thing and requiring light. Understand "type [number] on [thing]" or "type [number]" as typing it on. Rule for supplying a missing second noun while typing: now the second noun is the numeric keypad.
+Typing it on is an action applying to one topic and one touchable thing and requiring light. Understand "type [text] on [thing]" or "type [text]" as typing it on. Rule for supplying a missing second noun while typing when the numeric keypad is touchable: now the second noun is the numeric keypad.
 
 Instead of typing on when the second noun is not the numeric keypad: say "I don't see how to type on that."
 
-Carry out typing a number (called number typed) on the numeric keypad: now the display reading is "[display reading][number typed]"; if the display reading matches the regular expression "...$", now the display reading is the text matching regular expression.
+Check typing a text on the numeric keypad: if the topic understood exactly matches the regular expression "\d+", say "The keypad clicks merrily."; otherwise instead say "I don't see how to type that on a numeric keypad."
+
+Carry out typing a text on the numeric keypad: now the display reading is "[display reading][topic understood]"; if the display reading matches the regular expression "...$", now the display reading is the text matching regular expression.
 
 After typing on when the display reading is "123": say "The display flashes and you hear a soft click."; now the exit door is unlocked.
