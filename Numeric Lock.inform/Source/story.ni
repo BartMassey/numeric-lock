@@ -17,18 +17,26 @@ After going through the exit door: increment the score; end the story saying "Yo
 
 Section - The Lock
 
-The combination lock is fixed in place in the Locked Room. The numeric keypad is part of the combination lock. The display is part of the combination lock. The description of the combination lock is "This lock has a numeric keypad and a display. [Description of the display]".
+A display is a kind of thing. The description of a display is usually "The display [if the reading of the item described is empty]is blank[otherwise]reads '[reading of the item described]'[end if]." A display has an indexed text called the reading. The reading is usually "".
 
-The display reading is an indexed text that varies. The display reading is "". 
+A numeric keypad is a kind of thing.
 
-The description of the display is "The display [if the display reading is empty]is blank[otherwise]reads '[display reading]'[end if]."
+A numlock is a kind of thing. A numlock has a text called the lock-combo. A numeric keypad and a display are part of every numlock. The description of a numlock is usually "This lock has a numeric keypad and a display. [Readout of the item described]". 
 
-Typing it on is an action applying to one topic and one touchable thing and requiring light. Understand "type [text] on [thing]" or "type [text]" as typing it on. Rule for supplying a missing second noun while typing when the numeric keypad is touchable: now the second noun is the numeric keypad.
+To say readout of (N - a numlock): say description of the display of N.
+
+The example lock is a fixed in place numlock in the Locked Room.
+
+Typing it on is an action applying to one topic and one touchable thing and requiring light. Understand "type [text] on [thing]" or "type [text]" as typing it on. Rule for supplying a missing second noun while typing when a numeric keypad is touchable: now the second noun is a random touchable numeric keypad.
 
 Instead of typing on when the second noun is not the numeric keypad: say "I don't see how to type on that."
 
 Check typing a text on the numeric keypad: if the topic understood exactly matches the regular expression "\d+", say "The keypad clicks merrily."; otherwise instead say "I don't see how to type that on a numeric keypad."
 
-Carry out typing a text on the numeric keypad: now the display reading is "[display reading][topic understood]"; if the display reading matches the regular expression "...$", now the display reading is the text matching regular expression.
+Carry out typing a text on the numeric keypad: now the reading is "[reading][topic understood]"; if the reading matches the regular expression ".....$", now the reading is the text matching regular expression.
 
-After typing on when the display reading is "123": say "The display flashes and you hear a soft click."; now the exit door is unlocked.
+After typing on when the reading is "41532": say "The display flashes and you hear a soft click."; now the exit door is unlocked.
+
+Section - Blocks
+
+A block is a kind of thing. A block has a text called the letter. A block has a text called the digit.
